@@ -1,299 +1,175 @@
-.active {
-    & a {
-        background-color: $color-primary;
-        border-radius: 5rem;
+nav {
+    // @include respond(from-tab-land){
+    //     position: fixed;
+    // }
+
+    position: fixed;
+
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    z-index: 99;
+
+    background-color: white;
+    @include shadow;
+    // height: 80px;
+    width: 100%;
 
 
-        @include respond(tab-port) {
-            background: none;
-        }
-    }
+    transition: .3s all linear;
 
-}
+    & .logo {
+        transition: .3s all linear;
 
-
-
-
-.nav {
-
-    margin: 0 auto;
-    position: absolute;
-    z-index: 999;
-
-
-    .active {
-        & a {
-            &:link,
-            &:visited {
-                color: white !important;
-            }
-
+        & img {
+            width: 130px;
+            transition: .3s all linear;
         }
     }
 
     & ul {
-        // margin-right: 2rem;
+        text-decoration: none;
+        list-style: none;
         display: flex;
-        justify-content: space-between;
-
+        transition: .3s all linear;
 
         & li {
-            // display: inline-block;
-            list-style: none;
+            margin-right: 2rem;
+            transition: .3s all linear;
+
+            &:last-child {
+                margin: 0;
+            }
 
             & a {
-                font-size: 2rem;
+                font-weight: 400;
+                color: $color-text;
+                padding: 1rem 2rem;
+                transition: .2s all linear;
+                border-color: $color-primary;
 
-                @include respond(tab-port) {
-                    font-size: 1.3rem;
+                &:hover {
+                    border-bottom: 2px solid $color-primary;
                 }
             }
         }
     }
 
-    .nav-check {
-        display: none;
-        font-size: 2rem;
-        color: white;
-        // line-height: 8rem;
-        // margin-right: 4rem;
-        cursor: pointer;
-        // align-self: flex-end;
-        // margin-right: 1.6rem;
-        position: fixed;
-        right: 2rem;
-        top: 1.5rem;
-        background-color: $color-primary-dark;
-        padding: .7rem 1.5rem;
-        border-radius: 50rem;
-        cursor: pointer;
-        transition: all .4s ease-in-out;
-
-        &:hover {
-            transform: scale(1.1);
-
-        }
-
-        z-index: 99;
-
+    & li.active a {
+        border-bottom: 2px solid $color-primary;
+        color: black;
     }
+}
 
-    #check {
-        display: none;
+.nav-check {
+    font-size: 25px;
+    color: $color-text;
+    cursor: pointer;
+    display: none;
+}
 
-    }
+#check {
+    display: none;
+}
 
-    @include respond(tab-port) {
-        flex-direction: column;
-        // justify-content: flex-end;
-        // align-items: center;
+@include respond(tab-port){
+    .nav {
+        height: 60px;
+        padding: 1rem 2rem;
+        align-items: center;
 
-        .nav-check {
-            display: block;
-            animation-delay: 2s !important;
+        & .logo {
+            order: 2;
+            & img {
+                width: 95px;
+                transition: .3s all linear;
+            }
         }
 
         & ul {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            top: 0;
-            left: -100%;
-            text-align: center;
-            background-color: $color-primary-dark;
-            z-index: 99;
-            display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            // padding-top: 20%;
-            // padding-top: -7.7rem;
-
-            transition: all .5s;
+            // justify-content: center;
+            position: fixed;
+            height: 100vh;
+            width: 70vw;
+            background-color: $color-text;
+            left: -100%;
+            top: 6.7rem;
 
             & li {
-                display: block;
-                // margin: -7.7rem 0;
-                padding: 3rem 0;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+                &:first-child {
+                    margin-top: 10rem;
+                }
+                margin: 0;
+                height: 70px;
                 width: 100%;
-                font-size: 3rem;
-                // color: red;
-
+                
                 & a {
-
-                    &:hover,
-                    &:active {
-                        background: none;
-                        color: none;
-                    }
+                    color: white;
+                    padding: 3rem auto;
+                    font-size: 18px;
+                    line-height: 0;
+                    margin: 0;
                 }
-
-
-                &:hover,
-                &:active,
-                & .active {
-                    background-color: $color-primary !important;
-                    @include shadow;
-                }
-
-
             }
 
-            @include respond(tab-port) {
+            & li.active,
+            & li:hover {
 
-            }
-        }
-
-        #check:checked {
-            &~.nav-check {
-                z-index: 99999;
-                color: $color-primary-dark;
-                background-color: #fff;
-                @include shadow;
-                transform: scale(1.5) translateY(.5rem);
+                    background-color: $color-primary;
                 
             }
 
-            &~ul {
-                left: 0;
-            }
-            
         }
-
-
     }
-
-    @include navigation;
-
-
-
-    justify-content: flex-end;
-
-    & .logo {
-        display: none;
+    .nav-check {
+        display: block;
+        margin-left: .5rem;
+        margin-top: 8px;
     }
+    
+    #check {
+        // display: block;
 
+        &:checked ~ ul {
+            left: 0;
+        }
+    }
 }
 
-@include respond(from-tab-land) {
 
-    .nav-white {
-        & ul {
-            & li {
-                & a {
 
-                    &:link,
-                    &:visited {
-                        color: white;
-                    }
-
-                   
-                }
-            } 
-        }
+.mobile {
+    @include respond(from-tab-land){
+        display: none;
     }
+    position: fixed;
+    bottom: 0;
+    // height: 40px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    background-color: $color-text;
 
-
-    .sticky {
-
-        // transition: .4s all ease-in-out;
-        position: fixed;
-        width: 100%;
-        height: 10rem;
-        background-color: white;
-        @include shadow-nav;
-        z-index: 999;
-        transition: .2s all ease-in-out;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        & ul {
-            & li {
-                & a {
-
-                    &:link,
-                    &:visited {
-                        color: $color-text !important
-                    }
-
-                    
-                   
-                }
-            } 
-        }
-
-        & .logo {
-
-            display: flex;
-            justify-content: center;
-
-            & img {
-                height: 5rem;
-                margin: 0;
-                padding: 0;
-            }
-        }
-
-        a {
-
-            &:link,
-            &:visited {
-                color: $color-text !important;
-                text-decoration: none;
-                text-transform: uppercase;
-
-                padding: .5rem 2rem;
-                margin: 0 2rem;
-
-                font-size: 2rem;
-                transition: all .5s;
-                // padding: .5rem 3rem;
-                // margin: 0 2rem;
-
-                @include respond(phone) {
-                    font-size: 3rem;
-                }
-
-                @include respond(tab-port) {
-                    color: white !important;
-                }
-
-            }
-
-            &:hover {
-                color: white !important;
-            }
-
-            .active {
-                & a {
-                    color: white !important;
-
-                }
-            }
-
-        }
-
-        & ul {
-            & li {
-                & a {
-
-                    &:link,
-                    &:visited {
-                        color: $color-text !important;
-                    }
-
-                    &:hover {
-                        color: white !important;
-                    }
-                   
-                }
-            }
-
-            
-        }
-
-        
+    .btn {
+        width: 45%;
+        text-align: center;
+        padding: 15px 0;
     }
+}
+
+.display {
+    
 }

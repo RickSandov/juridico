@@ -1,0 +1,46 @@
+.more-info {
+    background-color: $color-text;
+    padding: 8rem 3rem;
+    // height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & span {
+        color: white;
+        font-size: 18px;
+        letter-spacing: 4px;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    & .number {
+        color: $color-primary-light;
+        font-size: 26px;
+        margin: 4rem 0;
+    }
+
+    &__items {
+        @include respond(from-tab-land){
+            width: 500px;
+        }
+        display: flex;
+        max-width: 95%;
+        justify-content: space-between;
+        color: white;
+        margin-bottom: 3.5rem;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+
+        & p {
+            
+            @include respond(tab-port){
+                line-height: 2;
+            }
+        }
+        
+    }
+}
+
+

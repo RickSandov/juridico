@@ -1,0 +1,81 @@
+.asociados {
+    background-image: linear-gradient(rgba($color-text, 0.9), rgba($color-text, 0.9)), url("https://www.unir.net/wp-content/uploads/2018/09/675876832.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+    height: 550px;
+
+    & h3 {
+        margin-top: -15%;
+    }
+
+    &__content {
+
+        & .card {
+            margin-top: -33rem;
+
+            @include respond(tab-port){
+                margin-top: -13rem;
+            }
+        }
+
+        & .lawyer-card {
+            // margin-top: -10rem;
+            display: flex;
+            flex-direction: column;
+            height: 425px;
+            width: 400px;
+            max-width: 90%;
+
+            &__pic {
+                height: 100%;
+                width: 100%;
+                background-image: linear-gradient(rgba($color-text, 0.4), rgba($color-text, 0.4)), url("../images/gibs.jpg");
+                background-size: 100%;
+                filter: grayscale(100%);
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: .3s all linear;
+                // transition: .3s background-size linear;
+
+                flex: 0 1 70%;
+
+                &:hover {
+                    filter: none;
+                    background-size: 120% auto;
+                }
+            }
+
+            &__info {
+                padding: 2rem;
+                height: 100%;
+                width: 100%;
+                text-align: center;
+
+                flex: 0 1 30%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                & h3 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+
+                & p {
+                    font-size: 15px;
+                    font-weight: 700;
+                    color: $color-text-light;
+                }
+            }
+        }
+    }
+
+    @include respond(tab-port){
+        height: 300px;
+    }
+}

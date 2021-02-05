@@ -1,0 +1,40 @@
+.info {
+    text-align: center;
+    align-self: center;
+    color: white;
+
+    & .logo {
+        text-decoration: none;
+        font-size: 30px !important;
+        text-transform: uppercase;
+        color: white;
+        margin: 0;
+    }
+
+    &__privacy {
+        margin-top: 1.5rem;
+    }
+
+    &__gg {
+        margin-top: 2.2rem;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        align-items: center;
+
+        & p {
+            line-height: 0;
+            // margin-bottom: -3px;
+        }
+
+        & a {
+            color: white;
+            margin-left: 4px;
+
+
+            & img {
+                height: 20px;
+            }
+        }
+    }
+}
