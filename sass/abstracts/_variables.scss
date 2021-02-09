@@ -1,9 +1,7 @@
-
-
 $color-text: #2E3238;
 $color-text-light: #727272;
 
-$color-primary: #c48900;
+$color-primary: hsl(42, 100%, 38%);
 $color-primary-dark: darken($color-primary, 15);
 $color-primary-light: #ffd026;
 
@@ -19,5 +17,3 @@ $color-btn-secondary: #2E3238;
 $color-success: #25d366;
 $color-danger: red;
 $color-warning: orange;
-
-

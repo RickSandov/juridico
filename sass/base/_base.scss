@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
     color: $color-text;
     line-height: 1.2;
 }
@@ -85,7 +85,6 @@ span {
     text-transform: uppercase;
     font-weight: 600;
     color: $color-text-light;
-    
 }
 
 
@@ -97,7 +96,7 @@ span {
     transition: .3s all linear;
     border: none;
     outline: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
 
     & span {
         font-size: 13px;
@@ -152,4 +151,61 @@ a {
     text-decoration: none;
     color: $color-text;
     font-size: 16px;
+}
+
+@for $i from 1 through 5 {
+    $measure: #{$i}rem;
+
+    .m-#{$i} {
+        margin: $measure;
+    }
+    .mt-#{$i} {
+        margin-top: $measure;
+    }
+    .mb-#{$i} {
+        margin-bottom: $measure;
+    }
+    .ml-#{$i} {
+        margin-left: $measure;
+    }
+    .mr-#{$i} {
+        margin-right: $measure;
+    }
+    .my-#{$i} {
+        margin: $measure 0;
+    }
+    .mx-#{$i} {
+        margin: 0 $measure;
+    }
+
+    .p-#{$i} {
+        padding: $measure;
+    }
+    .pt-#{$i} {
+        padding-top: $measure !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: $measure;
+    }
+    .pl-#{$i} {
+        padding-left: $measure;
+    }
+    .pr-#{$i} {
+        padding-right: $measure;
+    }
+    .py-#{$i} {
+        padding: $measure 0;
+    }
+    .px-#{$i} {
+        padding: 0 $measure;
+    }
+}
+
+
+.text-white {
+    color: white;
+
+    & p, a, h1, h2, h3, h4, h5 {
+        color: white;
+    }
 }

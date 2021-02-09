@@ -28,7 +28,7 @@ nav {
         transition: .3s all linear;
 
         & img {
-            width: 130px;
+            width: 110px;
             transition: .3s all linear;
         }
     }
@@ -43,6 +43,8 @@ nav {
             margin-right: 2rem;
             transition: .3s all linear;
 
+            
+
             &:last-child {
                 margin: 0;
             }
@@ -51,13 +53,25 @@ nav {
                 font-weight: 400;
                 color: $color-text;
                 padding: 1rem 2rem;
-                transition: .2s all linear;
+                transition: .3s all linear;
                 border-color: $color-primary;
+                text-transform: uppercase;
+                border-bottom: 2px solid transparent;
 
                 &:hover {
                     border-bottom: 2px solid $color-primary;
                 }
             }
+
+            &.sibra a {
+                color: #46d148;
+
+                &:hover {
+                    border-bottom: 2px solid #46d148;
+                }
+            }
+
+
         }
     }
 
@@ -78,14 +92,15 @@ nav {
     display: none;
 }
 
-@include respond(tab-port){
+@include respond(tab-port) {
     .nav {
         height: 60px;
         padding: 1rem 2rem;
         align-items: center;
 
         & .logo {
-            order: 2;
+            // order: 2;
+
             & img {
                 width: 95px;
                 transition: .3s all linear;
@@ -111,38 +126,52 @@ nav {
                 &:first-child {
                     margin-top: 10rem;
                 }
+
                 margin: 0;
                 height: 70px;
                 width: 100%;
-                
+
                 & a {
                     color: white;
                     padding: 3rem auto;
                     font-size: 18px;
                     line-height: 0;
                     margin: 0;
+                    border-bottom: none !important;
+
+                    &:hover {
+                        border-bottom: none !important;
+                    }
                 }
             }
 
             & li.active,
             & li:hover {
-
-                    background-color: $color-primary;
-                
+                background-color: $color-primary;
             }
+
+            & li.sibra:hover {
+                background-color: white;
+            }
+
+            
+
+            
 
         }
     }
+
     .nav-check {
-        display: block;
-        margin-left: .5rem;
-        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        transition: .3s all linear;
+
     }
-    
+
     #check {
         // display: block;
 
-        &:checked ~ ul {
+        &:checked~ul {
             left: 0;
         }
     }
@@ -151,9 +180,10 @@ nav {
 
 
 .mobile {
-    @include respond(from-tab-land){
+    @include respond(from-tab-land) {
         display: none;
     }
+
     position: fixed;
     bottom: 0;
     // height: 40px;
@@ -162,6 +192,7 @@ nav {
     justify-content: space-evenly;
     padding: 1rem 0;
     background-color: $color-text;
+    z-index: 100;
 
     .btn {
         width: 45%;
@@ -170,6 +201,4 @@ nav {
     }
 }
 
-.display {
-    
-}
+.display {}

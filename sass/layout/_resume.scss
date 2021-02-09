@@ -1,16 +1,26 @@
 .resume {
-    width: 1250px;
+    width: 1450px;
     max-width: 90%;
     height: 530px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // border-radius: 0 50rem 50rem 0 ;
+    // border-radius: 20rem;
+
+    @include respond(from-tab-land) {
+        padding-right: 6rem;
+        clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+        overflow: hidden;
+    }
 
     &__main {
         margin: 2rem 3rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        order: 2;
+
 
         & span,
         & h3,
@@ -30,24 +40,29 @@
         & p {
             margin-bottom: 3rem;
         }
-
-
     }
 
     &__pic {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lh3.googleusercontent.com/proxy/YqIceNFkYonpApRiek1AsIiARr3sOk8fXz1aT7C2pL7szEtsjoPuzgd8WkgLy7omWIlsndsTucmBbaa6ihpUswViItW3z29KeWruJqtE-Gs8G8A");
+        background-image: linear-gradient(rgba($color-text, 0.5), rgba($color-text, 0.5)), url("https://aws.admagazine.com/prod/designs/v1/assets/620x439/68283.jpg");
         background-size: cover;
-        background-position: right;
-        border-radius: 0 6px 6px 0 ;
-
+        background-position: center left;
+        filter: grayscale(1);
+        border-radius: 6px 0 0 6px;
+        // border-radius: 20rem 0 0 20rem ;
         height: 100%;
         width: 100%;
+        overflow: hidden;
 
-        @include respond(tab-port){
-            display: none;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1);
         }
+
     }
-    @include respond(tab-port){
+
+    @include respond(tab-port) {
         height: auto;
         padding: 3rem;
 
@@ -56,5 +71,13 @@
 
         }
 
+        &__pic {
+            display: none;
+        }
     }
+
 }
+
+.m-4 {}
+
+.m-5 {}
